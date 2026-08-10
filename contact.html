@@ -185,6 +185,15 @@
                         .accordion-luxury .accordion-button::after { display: none !important; }
                         .accordion-luxury .accordion-button:not(.collapsed) .lucide-chevron-down { transform: rotate(180deg); transition: transform 0.3s ease; }
                         .accordion-luxury .accordion-button.collapsed .lucide-chevron-down { transition: transform 0.3s ease; }
+
+                        /* Dark mode: force bright ivory text so it's visible on dark glass background */
+                        .accordion-luxury .accordion-button {
+                            color: var(--ivory) !important;
+                        }
+                        /* Light mode: switch to dark text */
+                        [data-theme="light"] .accordion-luxury .accordion-button {
+                            color: var(--ivory) !important;
+                        }
                     </style>
                     <div class="accordion accordion-luxury" id="faqAccordion">
                         <!-- FAQ Item 1 -->
@@ -273,7 +282,7 @@
         <div class="container pt-5">
             <div class="row g-5 mb-5">
                 <div class="col-lg-3 col-md-6">
-                    <div class="d-flex align-items-center gap-2 mb-4"><img src="assets/images/website_logo.svg" alt="Logo" style="height: 30px; width: auto; border-radius: 4px;"><h4 class="text-gold mb-0" style="font-family: var(--font-heading);">LuxeEvents</h4></div>
+                    <div class="d-flex align-items-center gap-2 mb-4"><img src="assets/images/website_logo.svg" alt="Logo" style="height: 30px; width: auto; border-radius: 4px;"><h4 class="brand-name text-gold mb-0" style="font-family: var(--font-heading);">LuxeEvents</h4></div>
                     <p class="text-muted small pe-4">Transforming visions into breathtaking realities. We are the architects of extraordinary celebrations.</p>
                     <div class="d-flex gap-3 mt-4 align-items-center">
                         <a href="#" class="social-icon-link text-decoration-none" aria-label="Instagram">
