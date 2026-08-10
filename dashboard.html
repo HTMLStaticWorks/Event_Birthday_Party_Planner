@@ -88,9 +88,11 @@
             border: 1px solid var(--champagne-gold);
         }
 
-        /* Prevent outline button text overflow at 1024px (sidebar + 3-col layout) */
+        /* Prevent button text overflow at 1024px (sidebar + 3-col layout) */
         @media (min-width: 992px) and (max-width: 1199px) {
-            #v-pills-vendors .btn-outline-luxury {
+            #v-pills-vendors .btn-outline-luxury,
+            #v-pills-payments .btn-outline-luxury,
+            #v-pills-payments .btn-primary-luxury {
                 padding: 8px 10px;
                 font-size: 0.72rem;
                 letter-spacing: 0.3px;
@@ -108,7 +110,7 @@
         style="border-color: var(--glass-border) !important;">
         <div class="d-flex align-items-center gap-2"><img src="assets/images/website_logo.svg" alt="Logo"
                 style="height: 40px; width: auto; border-radius: 8px;">
-            <span class="brand-name text-gold" style="font-family: var(--font-heading);">LuxeEvents</span>
+            <span class="brand-name text-gold fs-2 fw-bold" style="font-family: var(--font-heading);">LuxeEvents</span>
         </div>
         <button id="sidebarToggle" class="btn btn-link text-gold p-0"><i data-lucide="menu"></i></button>
     </div>
@@ -121,7 +123,7 @@
                     <div class="d-flex align-items-center justify-content-center gap-2 mb-1"><img
                             src="assets/images/website_logo.svg" alt="Logo"
                             style="height: 40px; width: auto; border-radius: 8px;">
-                        <span class="brand-name text-gold" style="font-family: var(--font-heading);">LuxeEvents</span>
+                        <span class="brand-name text-gold fs-2 fw-bold" style="font-family: var(--font-heading);">LuxeEvents</span>
                     </div>
                     <p class="text-muted small">Client Portal</p>
                 </a>
@@ -278,7 +280,7 @@
                     <p class="text-muted mb-4">You have selected <strong>The Obsidian Gala</strong> as your primary
                         aesthetic.</p>
 
-                    <div class="row g-4">
+                    <div class="row g-4 justify-content-center">
                         <div class="col-md-6 col-lg-4">
                             <div class="luxury-card h-100 border-gold"
                                 style="border-color: var(--champagne-gold) !important; box-shadow: 0 0 20px rgba(242, 220, 162, 0.1);">
@@ -358,33 +360,39 @@
                 <!-- Tab: Timeline -->
                 <div class="tab-pane fade" id="v-pills-timeline" role="tabpanel">
                     <h4 class="mb-4">Event Day Timeline (Draft)</h4>
-                    <div class="row g-4">
+                    <div class="row g-4 justify-content-center">
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-panel p-4 h-100 text-center border-gold border"
+                            <div class="glass-panel p-4 h-100 text-center border-gold border d-flex flex-column"
                                 style="border-color: var(--champagne-gold) !important; box-shadow: 0 0 20px rgba(242, 220, 162, 0.1);">
                                 <h2 class="text-gold mb-1">4:00 PM</h2>
                                 <h6 class="text-ivory mb-3">Vendor Setup</h6>
                                 <p class="text-muted small">Load-in for Lumina Design & Florals. Client final
                                     walkthrough.</p>
-                                <span class="badge badge-success-luxury rounded-pill">Confirmed</span>
+                                <div class="mt-auto">
+                                    <span class="badge badge-success-luxury rounded-pill">Confirmed</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-panel p-4 h-100 text-center border">
+                            <div class="glass-panel p-4 h-100 text-center border d-flex flex-column">
                                 <h2 class="text-gold mb-1">7:00 PM</h2>
                                 <h6 class="text-ivory mb-3">Guest Arrival</h6>
                                 <p class="text-muted small">Cocktail hour begins. Signature drinks served in the lounge.
                                 </p>
-                                <span class="badge badge-luxury rounded-pill">Pending</span>
+                                <div class="mt-auto">
+                                    <span class="badge badge-luxury rounded-pill">Pending</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-panel p-4 h-100 text-center border">
+                            <div class="glass-panel p-4 h-100 text-center border d-flex flex-column">
                                 <h2 class="text-muted mb-1">8:30 PM</h2>
                                 <h6 class="text-muted mb-3">Dinner Service</h6>
                                 <p class="text-muted small">5-course plated dinner service begins. Speeches & toasts to
                                     follow.</p>
-                                <span class="badge bg-secondary text-white rounded-pill">Draft</span>
+                                <div class="mt-auto">
+                                    <span class="badge bg-secondary text-white rounded-pill">Draft</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -392,10 +400,10 @@
 
                 <!-- Tab: Payments -->
                 <div class="tab-pane fade" id="v-pills-payments" role="tabpanel">
-                    <div class="row g-4">
+                    <div class="row g-4 justify-content-center">
                         <!-- Card 1: Financial Overview -->
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-panel p-4 h-100 border-gold border"
+                            <div class="glass-panel p-4 h-100 border-gold border d-flex flex-column"
                                 style="border-color: var(--champagne-gold) !important; box-shadow: 0 0 20px rgba(242, 220, 162, 0.1);">
                                 <h5 class="mb-4 text-gold text-center">Financial Overview</h5>
                                 <div class="d-flex justify-content-between mb-2">
@@ -410,32 +418,32 @@
                                     <span class="text-muted">Remaining</span>
                                     <span class="text-danger fw-bold">$2,500.00</span>
                                 </div>
-                                <button class="btn btn-sm btn-primary-luxury w-100">Make a Payment</button>
+                                <button class="btn btn-sm btn-primary-luxury w-100 mt-auto" style="white-space: nowrap;">Make a Payment</button>
                             </div>
                         </div>
 
                         <!-- Card 2: Paid Invoice -->
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-panel p-4 h-100 text-center border">
+                            <div class="glass-panel p-4 h-100 text-center border d-flex flex-column">
                                 <i data-lucide="check-circle" class="text-success mb-3 mx-auto" width="32"
                                     height="32"></i>
                                 <h6 class="mb-1 text-ivory">INV-2026-081</h6>
                                 <span class="badge bg-success bg-opacity-25 text-success rounded-pill mb-3">Paid</span>
                                 <p class="text-muted small mb-4">Initial 50% deposit paid on Aug 01.</p>
-                                <button class="btn btn-sm btn-outline-luxury w-100"><i data-lucide="download" width="14"
+                                <button class="btn btn-sm btn-outline-luxury w-100 mt-auto" style="white-space: nowrap;"><i data-lucide="download" width="14"
                                         class="me-1"></i> PDF Receipt</button>
                             </div>
                         </div>
 
                         <!-- Card 3: Pending Invoice -->
                         <div class="col-md-6 col-lg-4">
-                            <div class="glass-panel p-4 h-100 text-center border">
+                            <div class="glass-panel p-4 h-100 text-center border d-flex flex-column">
                                 <i data-lucide="clock" class="text-warning mb-3 mx-auto" width="32" height="32"></i>
                                 <h6 class="mb-1 text-ivory">INV-2026-082</h6>
                                 <span
                                     class="badge bg-warning bg-opacity-25 text-warning rounded-pill mb-3">Pending</span>
                                 <p class="text-muted small mb-4">Final balance due by Oct 01, 2026.</p>
-                                <button class="btn btn-sm btn-outline-luxury w-100" disabled><i data-lucide="download"
+                                <button class="btn btn-sm btn-outline-luxury w-100 mt-auto" disabled style="white-space: nowrap;"><i data-lucide="download"
                                         width="14" class="me-1"></i> PDF Invoice</button>
                             </div>
                         </div>
@@ -453,3 +461,4 @@
 </body>
 
 </html>
+
