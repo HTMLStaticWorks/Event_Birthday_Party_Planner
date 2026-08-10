@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Catering Event & Birthday Party Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/website_logo.svg">
+</head>
+<body>
+    <div class="glitter-bg" data-particles="30"></div>
+
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-xl navbar-dark navbar-glass">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand text-gold fs-4 fw-bold d-flex align-items-center gap-2" href="index.html" style="font-family: var(--font-heading);"><img src="assets/images/website_logo.svg" alt="Logo" style="height: 40px; width: auto; border-radius: 8px;">LuxeEvents</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i data-lucide="menu" class="text-gold"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-xl-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu glass-panel border-0 mt-3">
+                            <li><a class="dropdown-item text-ivory" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item text-ivory" href="home-2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">More</a>
+                        <ul class="dropdown-menu glass-panel border-0 mt-3">
+                            <li><a class="dropdown-item text-ivory" href="event-themes.html">Themes</a></li>
+                            <li><a class="dropdown-item text-ivory" href="vendors.html">Vendors</a></li>
+                            <li><a class="dropdown-item text-ivory" href="client-journey.html">Journey</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3 mt-3 mt-xl-0">
+                    <button id="themeToggle" class="btn btn-link text-gold p-0 text-decoration-none"><i data-lucide="moon"></i></button>
+                    <button id="rtlToggle" class="btn btn-link text-gold p-0 text-decoration-none"><i data-lucide="arrow-left-right"></i></button>
+                    <a href="login.html" class="btn btn-primary-luxury">Client Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Luxury About Hero -->
+    <header class="position-relative" style="background-color: var(--obsidian-light); border-bottom: 1px solid var(--glass-border); height: 60vh; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        
+        
+        
+        <div class="container text-center position-relative z-3 pt-5 reveal-up active">
+            <span class="text-rose text-uppercase tracking-wider fw-semibold mb-3 d-block">Who We Are</span>
+            <h1 class="display-2 fw-bold text-white mb-4">Architects of <br>Unforgettable Moments</h1>
+        </div>
+    </header>
+
+    <!-- Section 2: Our Story -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal-up">
+                    <h2 class="display-5 mb-4">Our Story</h2>
+                    <p class="lead text-muted mb-4">Founded on the belief that every milestone deserves to be celebrated with unparalleled elegance.</p>
+                    <p class="text-muted small mb-4">What started as an intimate luxury dining service has evolved into a premier full-scale event production house. From securing exclusive venues to designing breathtaking floral installations, our journey is defined by an obsessive attention to detail and a passion for creating cinematic experiences.</p>
+                    <a href="gallery.html" class="btn btn-outline-luxury mt-3">Explore Our Work</a>
+                </div>
+                <div class="col-lg-5 offset-lg-1 reveal-up" style="transition-delay: 0.2s;">
+                    <div class="position-relative mx-auto" style="max-width: 450px;">
+                        <img src="assets/images/Our Story.png" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover;" alt="Our Story">
+                        <div class="position-absolute border border-gold rounded-4" style="inset: -20px 20px 20px -20px; z-index: -1; border-color: var(--champagne-gold) !important; opacity: 0.3;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Our Event Philosophy -->
+    <section class="section-padding bg-dark bg-opacity-25 position-relative border-top border-bottom" style="border-color: var(--glass-border) !important;">
+        <div class="container text-center reveal-up">
+            <h2 class="display-5 mb-5">Our Philosophy</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h4 class="fw-light lh-lg" style="font-family: var(--font-heading); font-style: italic;">"We don't just plan events; we design immersive worlds. We believe that true luxury lies in the details—the ambient lighting, the texture of the linens, the perfectly timed music, and the seamless orchestration of the evening."</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Planning Process -->
+    <section class="section-padding position-relative">
+        <div class="container">
+            <div class="text-center mb-5 reveal-up">
+                <h2 class="display-5 mb-4">How We Orchestrate</h2>
+            </div>
+            <div class="row g-4 position-relative z-1 justify-content-center">
+                <div class="col-md-6 col-lg-4 reveal-up">
+                    <div class="glass-panel p-4 text-center h-100">
+                        <img src="assets/images/Vision & Blueprint.png" class="img-fluid rounded-4 mb-3" style="height: 200px; width: 100%; object-fit: cover;" alt="Vision & Blueprint">
+                        <h2 class="display-4 text-gold mb-3 opacity-50" style="font-family: var(--font-heading);">01</h2>
+                        <h4 class="mb-3">Vision & Blueprint</h4>
+                        <p class="text-muted small mb-0">We begin by understanding your desires, crafting mood boards and conceptualizing the aesthetic.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal-up" style="transition-delay: 0.1s;">
+                    <div class="glass-panel p-4 text-center h-100">
+                        <img src="assets/images/Curation & Design.png" class="img-fluid rounded-4 mb-3" style="height: 200px; width: 100%; object-fit: cover;" alt="Curation & Design">
+                        <h2 class="display-4 text-gold mb-3 opacity-50" style="font-family: var(--font-heading);">02</h2>
+                        <h4 class="mb-3">Curation & Design</h4>
+                        <p class="text-muted small mb-0">Sourcing the finest vendors, from Michelin-trained chefs to elite entertainers and florists.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal-up" style="transition-delay: 0.2s;">
+                    <div class="glass-panel p-4 text-center h-100">
+                        <img src="assets/images/Flawless Execution.png" class="img-fluid rounded-4 mb-3" style="height: 200px; width: 100%; object-fit: cover;" alt="Flawless Execution">
+                        <h2 class="display-4 text-gold mb-3 opacity-50" style="font-family: var(--font-heading);">03</h2>
+                        <h4 class="mb-3">Flawless Execution</h4>
+                        <p class="text-muted small mb-0">On the day of the event, our team ensures a seamless experience while you enjoy the moment.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 5: Our Creative Team (4 Cards) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 reveal-up">
+                <h2 class="display-5 mb-4">The Creative Minds</h2>
+                <p class="text-muted mb-5">Meet the visionary team behind the magic.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-3 reveal-up">
+                    <div class="luxury-card h-100 text-center border-0">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" class="rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover; border: 2px solid var(--champagne-gold);" alt="Creative Director">
+                        <div class="luxury-card-body pb-4">
+                            <h5 class="mb-1">Elena Rostova</h5>
+                            <p class="text-gold small mb-3">Creative Director</p>
+                            <p class="text-muted small mb-0">Specializes in immersive luxury aesthetics and spatial design.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-3 reveal-up" style="transition-delay: 0.1s;">
+                    <div class="luxury-card h-100 text-center border-0">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop&crop=faces" class="rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover; object-position: center; border: 2px solid var(--champagne-gold);" alt="Culinary Director">
+                        <div class="luxury-card-body pb-4">
+                            <h5 class="mb-1">Marcus Sterling</h5>
+                            <p class="text-gold small mb-3">Head of Culinary</p>
+                            <p class="text-muted small mb-0">Curates exquisite multi-course dining experiences.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-3 reveal-up" style="transition-delay: 0.2s;">
+                    <div class="luxury-card h-100 text-center border-0">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" class="rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover; border: 2px solid var(--champagne-gold);" alt="Event Producer">
+                        <div class="luxury-card-body pb-4">
+                            <h5 class="mb-1">Sarah Lin</h5>
+                            <p class="text-gold small mb-3">Lead Event Producer</p>
+                            <p class="text-muted small mb-0">Master of logistics, timelines, and seamless coordination.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-3 reveal-up" style="transition-delay: 0.3s;">
+                    <div class="luxury-card h-100 text-center border-0">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop" class="rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover; border: 2px solid var(--champagne-gold);" alt="Vendor Coordinator">
+                        <div class="luxury-card-body pb-4">
+                            <h5 class="mb-1">David Chen</h5>
+                            <p class="text-gold small mb-3">Vendor Relations</p>
+                            <p class="text-muted small mb-0">Secures the top-tier talent, venues, and entertainment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Why We Create -->
+    <section class="section-padding position-relative text-center overflow-hidden">
+        <div class="container position-relative z-3 reveal-up">
+            <div class="glass-panel p-5 rounded-4 shadow-lg border">
+                <h2 class="display-4 fw-bold mb-4 text-gold">Let Us Write Your Next Chapter</h2>
+                <p class="lead text-muted mb-5 mx-auto" style="max-width: 600px;">Because life's most precious moments happen once. Let us make them timeless.</p>
+                <a href="contact.html" class="btn btn-primary-luxury btn-lg">Start Planning</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer pb-4">
+        <div class="footer-gold-line"></div>
+        <div class="container pt-5">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex align-items-center gap-2 mb-4"><img src="assets/images/website_logo.svg" alt="Logo" style="height: 30px; width: auto; border-radius: 4px;"><h4 class="text-gold mb-0" style="font-family: var(--font-heading);">LuxeEvents</h4></div>
+                    <p class="text-muted small pe-4">Transforming visions into breathtaking realities. We are the architects of extraordinary celebrations.</p>
+                    <div class="d-flex gap-3 mt-4 align-items-center">
+                        <a href="#" class="social-icon-link text-decoration-none" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="social-icon-link text-decoration-none" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon-link text-decoration-none" aria-label="X (Twitter)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
+                        </a>
+                        <a href="#" class="social-icon-link text-decoration-none" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="about.html" class="text-muted text-decoration-none hover-gold">About Us</a></li>
+                        <li><a href="services.html" class="text-muted text-decoration-none">Services</a></li>
+                        <li><a href="gallery.html" class="text-muted text-decoration-none">Gallery</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Planning</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="pricing.html" class="text-muted text-decoration-none">Packages</a></li>
+                        <li><a href="event-themes.html" class="text-muted text-decoration-none">Themes</a></li>
+                        <li><a href="vendors.html" class="text-muted text-decoration-none">Vendors</a></li>
+                        <li><a href="client-journey.html" class="text-muted text-decoration-none">Client Journey</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Contact</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small text-muted">
+                        <li class="d-flex gap-2"><i data-lucide="phone" width="16" height="16" class="text-gold mt-1"></i> +1 (555) 123-4567</li>
+                        <li class="d-flex gap-2"><i data-lucide="mail" width="16" height="16" class="text-gold mt-1"></i> hello@luxeevents.com</li>
+                        <li class="d-flex gap-2"><i data-lucide="map-pin" width="16" height="16" class="text-gold mt-1"></i> 123 Luxury Ave, NY 10001</li>
+                        <li class="d-flex gap-2"><i data-lucide="clock" width="16" height="16" class="text-gold mt-1"></i> Mon-Sat: 9AM - 7PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center small text-muted">
+                <p class="mb-0">&copy; 2026 LuxeEvents. All rights reserved.</p>
+                <div class="d-flex gap-3 mt-3 mt-md-0">
+                    <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

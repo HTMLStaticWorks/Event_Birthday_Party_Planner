@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard | Catering Event & Birthday Party Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-pills .nav-link {
+            color: var(--ivory);
+            border-radius: 8px;
+            margin-bottom: 5px;
+            padding: 12px 20px;
+            transition: all 0.3s;
+        }
+
+        .nav-pills .nav-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--champagne-gold);
+        }
+
+        .nav-pills .nav-link.active {
+            background: var(--champagne-gold-dim);
+            color: var(--champagne-gold);
+            border-right: 3px solid var(--champagne-gold);
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .progress-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .step-icon.completed {
+            background: var(--champagne-gold);
+            color: #000;
+            border-color: var(--champagne-gold);
+        }
+
+        .step-icon.current {
+            border-color: var(--champagne-gold);
+            color: var(--champagne-gold);
+            box-shadow: 0 0 10px rgba(242, 220, 162, 0.3);
+        }
+
+        .step-icon.pending {
+            color: var(--glass-border);
+        }
+
+        .badge-luxury {
+            background: rgba(183, 110, 121, 0.2);
+            color: var(--rose-gold);
+            border: 1px solid var(--rose-gold);
+        }
+
+        .badge-success-luxury {
+            background: rgba(242, 220, 162, 0.1);
+            color: var(--champagne-gold);
+            border: 1px solid var(--champagne-gold);
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/website_logo.svg">
+</head>
+
+<body>
+    <div class="glitter-bg" data-particles="20"></div>
+
+    <!-- Mobile Header -->
+    <div class="d-lg-none d-flex justify-content-between align-items-center p-3 bg-dark border-bottom"
+        style="border-color: var(--glass-border) !important;">
+        <div class="d-flex align-items-center gap-2"><img src="assets/images/website_logo.svg" alt="Logo"
+                style="height: 25px; width: auto; border-radius: 4px;">
+            <h5 class="mb-0 text-gold" style="font-family: var(--font-heading);">LuxeEvents Portal</h5>
+        </div>
+        <button id="sidebarToggle" class="btn btn-link text-gold p-0"><i data-lucide="menu"></i></button>
+    </div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar px-3">
+            <div class="text-center mb-5 d-none d-lg-block">
+                <a href="index.html" class="text-decoration-none">
+                    <div class="d-flex align-items-center justify-content-center gap-2 mb-1"><img
+                            src="assets/images/website_logo.svg" alt="Logo"
+                            style="height: 30px; width: auto; border-radius: 4px;">
+                        <h3 class="text-gold mb-0" style="font-family: var(--font-heading);">LuxeEvents</h3>
+                    </div>
+                    <p class="text-muted small">Client Portal</p>
+                </a>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-4 p-3 rounded" style="background: rgba(255,255,255,0.03);">
+                <div class="rounded-circle bg-secondary"
+                    style="width: 40px; height: 40px; background: url('https://ui-avatars.com/api/?name=Eleanor+Vance&background=F2DCA2&color=000') center/cover;">
+                </div>
+                <div>
+                    <h6 class="mb-0 text-ivory">Eleanor Vance</h6>
+                    <small class="text-muted">The Obsidian Gala</small>
+                </div>
+            </div>
+
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link text-start active d-flex align-items-center gap-3" id="v-pills-overview-tab"
+                    data-bs-toggle="pill" data-bs-target="#v-pills-overview" type="button" role="tab"><i
+                        data-lucide="layout-dashboard" width="18"></i> Overview</button>
+
+                <button class="nav-link text-start d-flex align-items-center gap-3" id="v-pills-theme-tab"
+                    data-bs-toggle="pill" data-bs-target="#v-pills-theme" type="button" role="tab"><i
+                        data-lucide="palette" width="18"></i> Theme Selection</button>
+
+                <button class="nav-link text-start d-flex align-items-center gap-3" id="v-pills-vendors-tab"
+                    data-bs-toggle="pill" data-bs-target="#v-pills-vendors" type="button" role="tab"><i
+                        data-lucide="users" width="18"></i> Vendors</button>
+
+                <button class="nav-link text-start d-flex align-items-center gap-3" id="v-pills-timeline-tab"
+                    data-bs-toggle="pill" data-bs-target="#v-pills-timeline" type="button" role="tab"><i
+                        data-lucide="clock" width="18"></i> Timeline</button>
+
+                <button class="nav-link text-start d-flex align-items-center gap-3" id="v-pills-payments-tab"
+                    data-bs-toggle="pill" data-bs-target="#v-pills-payments" type="button" role="tab"><i
+                        data-lucide="credit-card" width="18"></i> Payments & Invoices</button>
+            </div>
+
+            <div class="mt-auto pt-5 pb-4">
+                <div class="d-flex align-items-center justify-content-center gap-4 mb-4">
+                    <button id="sidebarThemeToggle"
+                        class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
+                        <i data-lucide="moon" width="24" height="24"></i>
+                    </button>
+                    <button id="rtlToggle"
+                        class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
+                        <i data-lucide="arrow-right-left" width="24" height="24"></i>
+                    </button>
+                </div>
+                <a href="index.html"
+                    class="nav-link text-muted d-flex align-items-center justify-content-center gap-3 px-3"><i
+                        data-lucide="log-out" width="18"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content position-relative z-1">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h2 class="display-6 mb-0 text-gold" style="font-family: var(--font-heading);">Welcome back, Eleanor
+                </h2>
+            </div>
+
+            <div class="tab-content" id="v-pills-tabContent">
+
+                <!-- Tab: Overview -->
+                <div class="tab-pane fade show active" id="v-pills-overview" role="tabpanel">
+                    <!-- Stats -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <p class="text-muted small text-uppercase mb-1">Event Date</p>
+                                <h4 class="mb-0 text-ivory">Oct 15, 2026</h4>
+                                <small class="text-gold">68 days remaining</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <p class="text-muted small text-uppercase mb-1">Package & Guest Count</p>
+                                <h4 class="mb-0 text-ivory">Signature Birthday</h4>
+                                <small class="text-muted">75 Guests Confirmed</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <p class="text-muted small text-uppercase mb-1">Payment Status</p>
+                                <h4 class="mb-0 text-ivory">$2,500 Paid</h4>
+                                <small class="text-danger">50% Remaining</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress -->
+                    <div class="glass-panel p-4 p-md-5">
+                        <h4 class="mb-4">Planning Progress</h4>
+
+                        <div class="progress-step">
+                            <div class="step-icon completed"><i data-lucide="check" width="16"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-ivory">Consultation</h6>
+                                <p class="text-muted small mb-0">Initial meeting completed.</p>
+                            </div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-icon completed"><i data-lucide="check" width="16"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-ivory">Theme Selected</h6>
+                                <p class="text-muted small mb-0">Obsidian Gala aesthetic approved.</p>
+                            </div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-icon current"><i data-lucide="circle" width="16" fill="currentColor"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1 text-ivory">Vendors Assigned</h6>
+                                <p class="text-gold small mb-0">Awaiting final catering approval.</p>
+                            </div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-icon pending"><i data-lucide="circle" width="16"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-muted">Menu Approved</h6>
+                            </div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-icon pending"><i data-lucide="circle" width="16"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-muted">Timeline Approved</h6>
+                            </div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-icon pending"><i data-lucide="circle" width="16"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-muted">Event Day</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Theme Selection -->
+                <div class="tab-pane fade" id="v-pills-theme" role="tabpanel">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="mb-0">Theme Selection</h4>
+                        <span class="badge badge-success-luxury rounded-pill px-3 py-2">Theme Approved</span>
+                    </div>
+                    <p class="text-muted mb-4">You have selected <strong>The Obsidian Gala</strong> as your primary
+                        aesthetic.</p>
+
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="luxury-card h-100 border-gold"
+                                style="border-color: var(--champagne-gold) !important; box-shadow: 0 0 20px rgba(242, 220, 162, 0.1);">
+                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop"
+                                    style="height: 200px; width: 100%; object-fit: cover;" alt="Selected Theme">
+                                <div class="luxury-card-body p-3 text-center">
+                                    <h5 class="text-gold">The Obsidian Gala</h5>
+                                    <span class="badge bg-dark text-gold border border-gold mb-3">Selected</span>
+                                    <p class="text-muted small">Deep black velvet, gold accents, and warm candlelight.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="luxury-card h-100" style="opacity: 0.5;">
+                                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop"
+                                    style="height: 200px; width: 100%; object-fit: cover;" alt="Theme">
+                                <div class="luxury-card-body p-3 text-center">
+                                    <h5>Enchanted Garden</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="luxury-card h-100" style="opacity: 0.5;">
+                                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1794&auto=format&fit=crop"
+                                    style="height: 200px; width: 100%; object-fit: cover;" alt="Theme">
+                                <div class="luxury-card-body p-3 text-center">
+                                    <h5>Cosmic Celebration</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Vendors -->
+                <div class="tab-pane fade" id="v-pills-vendors" role="tabpanel">
+                    <h4 class="mb-4">Vendor Assignment</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 text-center border-gold border"
+                                style="border-color: var(--champagne-gold) !important; box-shadow: 0 0 20px rgba(242, 220, 162, 0.1);">
+                                <i data-lucide="sparkles" class="text-gold mb-3 mx-auto" width="32" height="32"></i>
+                                <h5 class="text-ivory">Lumina Design</h5>
+                                <span class="badge badge-success-luxury rounded-pill mb-3">Confirmed Decorator</span>
+                                <p class="text-muted small">Specializing in bespoke floral arrangements and luxury
+                                    draping.</p>
+                                <button class="btn btn-sm btn-outline-luxury w-100 mt-2">View Contract</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 text-center border">
+                                <i data-lucide="utensils" class="text-gold mb-3 mx-auto" width="32" height="32"></i>
+                                <h5 class="text-ivory">Haute Cuisine</h5>
+                                <span class="badge badge-luxury rounded-pill mb-3">Awaiting Approval</span>
+                                <p class="text-muted small">5-course plated dinner featuring sustainable, locally
+                                    sourced ingredients.</p>
+                                <button class="btn btn-sm btn-outline-luxury w-100 mt-2">Review Menu</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 text-center border">
+                                <i data-lucide="camera" class="text-gold mb-3 mx-auto" width="32" height="32"></i>
+                                <h5 class="text-ivory">Editorial Lens Co.</h5>
+                                <span class="badge badge-success-luxury rounded-pill mb-3">Confirmed Photographer</span>
+                                <p class="text-muted small">Cinematic videography and editorial-style photography
+                                    package.</p>
+                                <button class="btn btn-sm btn-outline-luxury w-100 mt-2">View Portfolio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Timeline -->
+                <div class="tab-pane fade" id="v-pills-timeline" role="tabpanel">
+                    <h4 class="mb-4">Event Day Timeline (Draft)</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 text-center border-gold border"
+                                style="border-color: var(--champagne-gold) !important; box-shadow: 0 0 20px rgba(242, 220, 162, 0.1);">
+                                <h2 class="text-gold mb-1">4:00 PM</h2>
+                                <h6 class="text-ivory mb-3">Vendor Setup</h6>
+                                <p class="text-muted small">Load-in for Lumina Design & Florals. Client final
+                                    walkthrough.</p>
+                                <span class="badge badge-success-luxury rounded-pill">Confirmed</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 text-center border">
+                                <h2 class="text-gold mb-1">7:00 PM</h2>
+                                <h6 class="text-ivory mb-3">Guest Arrival</h6>
+                                <p class="text-muted small">Cocktail hour begins. Signature drinks served in the lounge.
+                                </p>
+                                <span class="badge badge-luxury rounded-pill">Pending</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 text-center border">
+                                <h2 class="text-muted mb-1">8:30 PM</h2>
+                                <h6 class="text-muted mb-3">Dinner Service</h6>
+                                <p class="text-muted small">5-course plated dinner service begins. Speeches & toasts to
+                                    follow.</p>
+                                <span class="badge bg-secondary text-white rounded-pill">Draft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Payments -->
+                <div class="tab-pane fade" id="v-pills-payments" role="tabpanel">
+                    <div class="row g-4">
+                        <!-- Card 1: Financial Overview -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 border-gold border"
+                                style="border-color: var(--champagne-gold) !important; box-shadow: 0 0 20px rgba(242, 220, 162, 0.1);">
+                                <h5 class="mb-4 text-gold text-center">Financial Overview</h5>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted small">Total Cost</span>
+                                    <span class="text-ivory fw-bold small">$5,000.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted small">Paid (Deposit)</span>
+                                    <span class="text-success fw-bold small">$2,500.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-4 border-top border-secondary pt-2">
+                                    <span class="text-muted">Remaining</span>
+                                    <span class="text-danger fw-bold">$2,500.00</span>
+                                </div>
+                                <button class="btn btn-sm btn-primary-luxury w-100">Make a Payment</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Paid Invoice -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 text-center border">
+                                <i data-lucide="check-circle" class="text-success mb-3 mx-auto" width="32"
+                                    height="32"></i>
+                                <h6 class="mb-1 text-ivory">INV-2026-081</h6>
+                                <span class="badge bg-success bg-opacity-25 text-success rounded-pill mb-3">Paid</span>
+                                <p class="text-muted small mb-4">Initial 50% deposit paid on Aug 01.</p>
+                                <button class="btn btn-sm btn-outline-luxury w-100"><i data-lucide="download" width="14"
+                                        class="me-1"></i> PDF Receipt</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Pending Invoice -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-panel p-4 h-100 text-center border">
+                                <i data-lucide="clock" class="text-warning mb-3 mx-auto" width="32" height="32"></i>
+                                <h6 class="mb-1 text-ivory">INV-2026-082</h6>
+                                <span
+                                    class="badge bg-warning bg-opacity-25 text-warning rounded-pill mb-3">Pending</span>
+                                <p class="text-muted small mb-4">Final balance due by Oct 01, 2026.</p>
+                                <button class="btn btn-sm btn-outline-luxury w-100" disabled><i data-lucide="download"
+                                        width="14" class="me-1"></i> PDF Invoice</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/main.js"></script> <!-- Included for theme toggle -->
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

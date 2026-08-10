@@ -1,0 +1,60 @@
+<!-- Footer -->
+    <footer class="luxury-footer pb-4">
+        <div class="footer-gold-line"></div>
+        <div class="container pt-5">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-gold mb-4" style="font-family: var(--font-heading);">LuxeEvents</h4>
+                    <p class="text-muted small pe-4">Transforming visions into breathtaking realities. We are the architects of extraordinary celebrations.</p>
+                    <div class="d-flex gap-3 mt-4 align-items-center">
+                        <a href="#" class="social-icon-link text-decoration-none" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="social-icon-link text-decoration-none" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon-link text-decoration-none" aria-label="X (Twitter)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
+                        </a>
+                        <a href="#" class="social-icon-link text-decoration-none" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="about.html" class="text-muted text-decoration-none hover-gold">About Us</a></li>
+                        <li><a href="services.html" class="text-muted text-decoration-none">Services</a></li>
+                        <li><a href="gallery.html" class="text-muted text-decoration-none">Gallery</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Planning</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="pricing.html" class="text-muted text-decoration-none">Packages</a></li>
+                        <li><a href="event-themes.html" class="text-muted text-decoration-none">Themes</a></li>
+                        <li><a href="vendors.html" class="text-muted text-decoration-none">Vendors</a></li>
+                        <li><a href="client-journey.html" class="text-muted text-decoration-none">Client Journey</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Contact</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small text-muted">
+                        <li class="d-flex gap-2"><i data-lucide="phone" width="16" height="16" class="text-gold mt-1"></i> +1 (555) 123-4567</li>
+                        <li class="d-flex gap-2"><i data-lucide="mail" width="16" height="16" class="text-gold mt-1"></i> hello@luxeevents.com</li>
+                        <li class="d-flex gap-2"><i data-lucide="map-pin" width="16" height="16" class="text-gold mt-1"></i> 123 Luxury Ave, NY 10001</li>
+                        <li class="d-flex gap-2"><i data-lucide="clock" width="16" height="16" class="text-gold mt-1"></i> Mon-Sat: 9AM - 7PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center small text-muted">
+                <p class="mb-0">&copy; 2026 LuxeEvents. All rights reserved.</p>
+                <div class="d-flex gap-3 mt-3 mt-md-0">
+                    <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
