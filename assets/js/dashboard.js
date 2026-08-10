@@ -25,4 +25,14 @@ function initSidebarToggle() {
             }
         }
     });
+
+    // Auto-close sidebar when a nav pill tab is selected (mobile/tablet ≤ 991px)
+    const navPillBtns = document.querySelectorAll('#v-pills-tab .nav-link');
+    navPillBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (window.innerWidth <= 991 && sidebar && sidebar.classList.contains('show')) {
+                sidebar.classList.remove('show');
+            }
+        });
+    });
 }

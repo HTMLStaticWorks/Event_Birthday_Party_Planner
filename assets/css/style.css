@@ -276,6 +276,8 @@ a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  white-space: nowrap;
+  max-width: 100%;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -303,6 +305,16 @@ a:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 25px rgba(242, 220, 162, 0.5);
   color: #000;
+}
+
+/* Mobile: scale down CTA button to fit narrow containers */
+@media (max-width: 575.98px) {
+  .btn-primary-luxury,
+  .btn-primary-luxury.btn-lg {
+    padding: 10px 20px;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+  }
 }
 
 .btn-outline-luxury {
