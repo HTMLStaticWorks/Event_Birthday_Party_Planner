@@ -11,6 +11,7 @@
         .auth-container {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
@@ -40,7 +41,13 @@
             position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop') center/cover; opacity: 0.1; mix-blend-mode: overlay; z-index: 1;
         }
         .auth-controls {
-            position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; gap: 15px;
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 10px;
+            z-index: 10;
         }
         .password-toggle {
             position: absolute; inset-inline-end: 15px; top: 40px; cursor: pointer; color: var(--glass-border);
@@ -54,16 +61,15 @@
     <div class="auth-bg-layer"></div>
     <div class="glitter-bg" data-particles="60" style="z-index: 2;"></div>
 
-    <div class="auth-controls">
-        <button id="themeToggle" class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
-            <i data-lucide="moon" width="24" height="24"></i>
-        </button>
-        <button id="rtlToggle" class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
-            <i data-lucide="arrow-right-left" width="24" height="24"></i>
-        </button>
-    </div>
-
     <div class="auth-container p-3 py-5">
+        <div class="auth-controls">
+            <button id="themeToggle" class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
+                <i data-lucide="moon" width="24" height="24"></i>
+            </button>
+            <button id="rtlToggle" class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
+                <i data-lucide="arrow-right-left" width="24" height="24"></i>
+            </button>
+        </div>
         <div class="glass-panel auth-panel text-center reveal-up active">
             <a href="index.html" class="text-gold text-decoration-none fs-2 fw-bold d-flex align-items-center justify-content-center gap-2 mb-2" style="font-family: var(--font-heading);"><img src="assets/images/website_logo.svg" alt="Logo" style="height: 40px; width: auto; border-radius: 8px;">LuxeEvents</a>
             <p class="text-muted small mb-4">Create your luxury event portal</p>

@@ -307,13 +307,30 @@ a:hover {
   color: #000;
 }
 
-/* Mobile: scale down CTA button to fit narrow containers */
+/* Mobile: scale down CTA buttons to fit narrow containers */
 @media (max-width: 575.98px) {
   .btn-primary-luxury,
-  .btn-primary-luxury.btn-lg {
+  .btn-primary-luxury.btn-lg,
+  .btn-outline-luxury {
     padding: 10px 20px;
     font-size: 0.78rem;
     letter-spacing: 0.5px;
+    width: auto;
+    text-align: center;
+  }
+
+  /* Hero & CTA sections: force both buttons to equal size */
+  .hero-section .btn-primary-luxury,
+  .hero-section .btn-outline-luxury,
+  .glass-panel .btn-primary-luxury,
+  .glass-panel .btn-outline-luxury {
+    width: 100%;
+    height: 45px !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box;
   }
 }
 

@@ -59,11 +59,30 @@
         }
 
         @media screen and (max-width: 768px) {
-            .timeline-container::after { left: 31px; }
-            .timeline-step { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
-            .timeline-step.right { left: 0%; }
-            .timeline-step.left .timeline-node, .timeline-step.right .timeline-node {
-                left: 19px; right: auto;
+            /* Hide the vertical line */
+            .timeline-container::after { display: none; }
+            /* Hide dot nodes */
+            .timeline-node { display: none; }
+            /* Full-width cards, no left offset, clean padding */
+            .timeline-step {
+                width: 100%;
+                left: 0 !important;
+                padding: 10px 0;
+                text-align: left;
+            }
+            .timeline-step.left,
+            .timeline-step.right {
+                left: 0 !important;
+                text-align: left;
+            }
+            .timeline-content {
+                text-align: left;
+            }
+            .timeline-content h3,
+            .timeline-content h4,
+            .timeline-content p,
+            .timeline-content span {
+                text-align: left;
             }
         }
 
@@ -95,22 +114,17 @@
 
         /* RTL mobile overrides */
         @media screen and (max-width: 768px) {
-            [dir="rtl"] .timeline-container::after {
-                left: auto;
-                right: 31px;
-            }
+            [dir="rtl"] .timeline-container::after { display: none; }
             [dir="rtl"] .timeline-step {
                 width: 100%;
-                padding-right: 70px;
-                padding-left: 25px;
+                padding-right: 0;
+                padding-left: 0;
                 text-align: right;
                 right: 0;
                 left: auto;
             }
-            [dir="rtl"] .timeline-step.left .timeline-node,
-            [dir="rtl"] .timeline-step.right .timeline-node {
-                right: 19px;
-                left: auto;
+            [dir="rtl"] .timeline-content {
+                text-align: right;
             }
         }
     </style>
