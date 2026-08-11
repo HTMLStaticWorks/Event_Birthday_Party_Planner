@@ -40,7 +40,8 @@
         .auth-bg-layer {
             position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop') center/cover; opacity: 0.1; mix-blend-mode: overlay; z-index: 1;
         }
-        .auth-controls {
+        /* Mobile controls — inside container, flows naturally */
+        .auth-controls-mobile {
             display: flex;
             gap: 12px;
             justify-content: flex-end;
@@ -48,6 +49,61 @@
             max-width: 600px;
             margin-bottom: 10px;
             z-index: 10;
+        }
+        /* Tablet fixed controls — outside container, truly fixed */
+        .auth-controls-tablet {
+            display: none;
+            gap: 12px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            /* Force body to scroll so fixed buttons stay anchored to viewport */
+            html, body {
+                overflow-y: auto !important;
+                height: auto !important;
+            }
+            .auth-controls-mobile {
+                display: none !important; /* hide mobile version on tablet */
+            }
+            .auth-controls-tablet {
+                display: flex !important; /* show fixed version on tablet */
+                align-items: center;
+                gap: 10px;
+            }
+            /* Gold-bordered glass box around each button — matches screenshot */
+            .auth-controls-tablet .btn {
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1.5px solid var(--champagne-gold, #c9a84c) !important;
+                border-radius: 10px !important;
+                background: rgba(20, 10, 30, 0.35) !important;
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                transition: background 0.2s;
+            }
+            .auth-controls-tablet .btn:hover {
+                background: rgba(201, 168, 76, 0.15) !important;
+            }
+            /*
+             * CRITICAL: Bootstrap's py-5 class applies padding-top: 3rem !important (48px).
+             * Without !important here, card top = 48px and buttons at top:20px height:44px
+             * = bottom at 64px, causing the card to OVERLAP the buttons by 16px.
+             * Adding !important forces padding-top: 90px, giving a clean gap.
+             */
+            .auth-container {
+                overflow: visible !important;
+                min-height: auto !important;
+                justify-content: flex-start !important;
+                align-items: center !important;
+                padding-top: 90px !important;
+                padding-bottom: 40px !important;
+            }
         }
         .password-toggle {
             position: absolute; inset-inline-end: 15px; top: 40px; cursor: pointer; color: var(--glass-border);
@@ -61,8 +117,19 @@
     <div class="auth-bg-layer"></div>
     <div class="glitter-bg" data-particles="60" style="z-index: 2;"></div>
 
+    <!-- Tablet-only fixed controls (outside container so overflow:hidden never clips them) -->
+    <div class="auth-controls-tablet">
+        <button id="themeToggleTablet" class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
+            <i data-lucide="moon" width="24" height="24"></i>
+        </button>
+        <button id="rtlToggleTablet" class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
+            <i data-lucide="arrow-right-left" width="24" height="24"></i>
+        </button>
+    </div>
+
     <div class="auth-container p-3 py-5">
-        <div class="auth-controls">
+        <!-- Mobile controls — inside container for proper background coverage -->
+        <div class="auth-controls-mobile">
             <button id="themeToggle" class="btn btn-link p-0 text-gold border-0 text-decoration-none bg-transparent">
                 <i data-lucide="moon" width="24" height="24"></i>
             </button>
@@ -158,6 +225,19 @@
             }
             lucide.createIcons();
         });
+        // Wire tablet fixed buttons to trigger same action as mobile buttons
+        const themeTablet = document.getElementById('themeToggleTablet');
+        const rtlTablet   = document.getElementById('rtlToggleTablet');
+        if (themeTablet) {
+            themeTablet.addEventListener('click', function () {
+                document.getElementById('themeToggle').click();
+            });
+        }
+        if (rtlTablet) {
+            rtlTablet.addEventListener('click', function () {
+                document.getElementById('rtlToggle').click();
+            });
+        }
     </script>
 </body>
 </html>
